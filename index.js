@@ -6,8 +6,14 @@ const app = express();
 
 app.get('/home', (req,res)=> {
 res.send({
-  data:'hello world',
+  data:'hello home',
 });
 });
+
+app.get('/lol', (req,res)=> {
+  res.send({
+    data:'hello lol',
+  });
+  });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))

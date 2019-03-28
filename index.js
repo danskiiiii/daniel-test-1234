@@ -1,11 +1,12 @@
+require('dotenv').config();
+
 const express = require('express')
 const path = require('path')
 const port = process.env.PORT || 5000
-
 const app = express();
 
 const mongoose = require('mongoose');
-const databaseURI = 'mongodb+srv://daniel:danieldaniel@daniel-test-1-z7k6v.mongodb.net/test?retryWrites=true';
+const databaseURI = process.env.DB_CONNECTION_STR
 const UserSchema = require('./helpers/user.schema');
 
 mongoose.connect(databaseURI);
